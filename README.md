@@ -3,7 +3,7 @@ Fast synchronization-free algorithms for parallel sparse triangular solves with 
 <br><hr>
 <h3>Introduction</h3>
 
-This is the source code of a submitted paper "Fast synchronization-free algorithms for parallel sparse triangular solves with multiple right-hand sides" by Weifeng Liu, Ang Li, Jonathan D. Hogg, Iain S. Duff, and Brian Vinter, which is extended from our Euro-Par '16 work [[PDF](http://www.nbi.dk/~weifeng/papers/sptrsv_liu_europar16.pdf)] [[Slides](http://www.nbi.dk/~weifeng/slides/sptrsv_liu_europar16_slides.pdf)] [[DOI](http://dx.doi.org/10.1007/978-3-319-43659-3_45)].
+This is the source code of a submitted paper "Fast Synchronization-Free Algorithms for Parallel Sparse Triangular Solves with Multiple Right-Hand Sides" by Weifeng Liu, Ang Li, Jonathan D. Hogg, Iain S. Duff, and Brian Vinter, which is extended from our Euro-Par '16 work [[PDF](http://www.nbi.dk/~weifeng/papers/sptrsv_liu_europar16.pdf)] [[Slides](http://www.nbi.dk/~weifeng/slides/sptrsv_liu_europar16_slides.pdf)] [[DOI](http://dx.doi.org/10.1007/978-3-319-43659-3_45)].
 
 The code supports both forward and backward substitution and multiple right-hand sides.
 
