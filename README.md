@@ -5,9 +5,7 @@ Fast synchronization-free algorithms for parallel sparse triangular solves with 
 
 This is the source code of a submitted paper "Fast synchronization-free algorithms for parallel sparse triangular solves with multiple right-hand sides" by Weifeng Liu, Ang Li, Jonathan D. Hogg, Iain S. Duff, and Brian Vinter, which is extended from our Euro-Par '16 work [[PDF](http://www.nbi.dk/~weifeng/papers/sptrsv_liu_europar16.pdf)] [[Slides](http://www.nbi.dk/~weifeng/slides/sptrsv_liu_europar16_slides.pdf)] [[DOI](http://dx.doi.org/10.1007/978-3-319-43659-3_45)].
 
-Update (30 Nov. 2016): This algorithm has been improved to support both forward and backward substitution, and multiple right-hand sides. See [https://github.com/bhSPARSE/Benchmark_SpTRSM_using_CSC](https://github.com/bhSPARSE/Benchmark_SpTRSM_using_CSC) for a newer version of this work.
-
-Update (25 Feb. 2016): An OpenCL version has been added.
+The code supports both forward and backward substitution and multiple right-hand sides.
 
 <br><hr>
 <h3>nVidia GPU (CUDA) version</h3>
@@ -35,7 +33,7 @@ Update (25 Feb. 2016): An OpenCL version has been added.
 
 1. Set OpenCL path in the Makefile,
 2. Run ``make``,
-3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here numbers `0' and `2' are device id and the number of right-hand sides, respectively. The `-forward' canbe replaced by `-backward' for solving upper triangular part of the input .mtx matrix.
+3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here numbers `0` and `2` are device id and the number of right-hand sides, respectively. The `-forward` canbe replaced by `-backward` for solving upper triangular part of the input .mtx matrix.
 
 - Tested environments (Note that an OpenCL 2.0 device is required for running the code)
 
