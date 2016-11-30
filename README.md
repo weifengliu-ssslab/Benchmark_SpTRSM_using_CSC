@@ -16,7 +16,7 @@ Please contact [Weifeng Liu](http://www.nbi.dk/~weifeng/) for reporting any issu
 
 1. Set CUDA path in the Makefile,
 2. Run ``make``,
-3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here changable parameters `0` and `2` refer to device id and the number of right-hand sides, respectively. When `-rhs` is set to 1, the operation is SpTRSV, otherwise SpTRSM. The `-forward` can be replaced by `-backward` for solving upper triangular part of the input .mtx matrix.
+3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here changable parameters `0` and `2` refer to device id and the number of right-hand sides, respectively. When `-rhs` is set to `1`, the operation is SpTRSV, otherwise SpTRSM. The `-forward` (for solving lower triangular part of the input .mtx matrix) can be replaced by `-backward` (for solving its upper triangular part).
 
 - Tested environments
 
@@ -35,7 +35,7 @@ Please contact [Weifeng Liu](http://www.nbi.dk/~weifeng/) for reporting any issu
 
 1. Set OpenCL path in the Makefile,
 2. Run ``make``,
-3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here changable parameters `0` and `2` refer to device id and the number of right-hand sides, respectively. When `-rhs` is set to 1, the operation is SpTRSV, otherwise SpTRSM. The `-forward` can be replaced by `-backward` for solving upper triangular part of the input .mtx matrix.
+3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here changable parameters `0` and `2` refer to device id and the number of right-hand sides, respectively. When `-rhs` is set to `1`, the operation is SpTRSV, otherwise SpTRSM. The `-forward` (for solving lower triangular part of the input .mtx matrix) can be replaced by `-backward` (for solving its upper triangular part).
 
 - Tested environments (Note that an OpenCL 2.0 device is required for running the code)
 
