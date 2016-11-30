@@ -1,5 +1,5 @@
 # Benchmark_SpTRSM_using_CSC
-Fast synchronization-free algorithms for parallel sparse triangular solves with multiple right-hand sides
+Fast synchronization-free algorithms for parallel sparse triangular solves with multiple right-hand sides (SpTRSM)
 <br><hr>
 <h3>Introduction</h3>
 
@@ -24,7 +24,7 @@ The code supports both forward and backward substitution and multiple right-hand
 
 - Data type
 
-1. The code supports both double precision and single precision SpTRSV. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision.
+1. The code supports both double precision and single precision SpTRSV and SpTRSM. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision. Note that for older CUDA devices and SDKs, lines 16-31 of file `utils.h`should be uncommented for double precision support.
 
 <br><hr>
 <h3>AMD GPU (OpenCL 2.0) version</h3>
@@ -42,4 +42,4 @@ The code supports both forward and backward substitution and multiple right-hand
 
 - Data type
 
-1. The code supports both double precision and single precision SpTRSV. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision. 
+1. The code supports both double precision and single precision SpTRSV and SpTRSM. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision. 
