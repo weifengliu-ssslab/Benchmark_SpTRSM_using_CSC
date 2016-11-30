@@ -26,7 +26,7 @@ Please contact [Weifeng Liu](http://www.nbi.dk/~weifeng/) for reporting any issu
 
 - Data type
 
-1. The code supports both double precision and single precision SpTRSV and SpTRSM. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision. Note that for older CUDA devices and SDKs, lines 16-31 of file `utils.h`should be uncommented for double precision support.
+1. The code supports both double precision and single precision SpTRSV and SpTRSM. Use ``make VALUE_TYPE=double`` for double precision or ``make VALUE_TYPE=float`` for single precision. (Note that for CUDA devices older than Pascal and CUDA SDKs older v8.0, lines 16-31 of file `utils.h` should be uncommented for double precision support.)
 
 <br><hr>
 <h3>AMD GPU (OpenCL 2.0) version</h3>
