@@ -7,6 +7,8 @@ This is the source code of a submitted paper "Fast synchronization-free algorith
 
 The code supports both forward and backward substitution and multiple right-hand sides.
 
+Please contact [Weifeng Liu](http://www.nbi.dk/~weifeng/) for reporting any issues in the code.
+
 <br><hr>
 <h3>nVidia GPU (CUDA) version</h3>
 
