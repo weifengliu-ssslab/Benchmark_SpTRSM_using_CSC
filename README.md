@@ -16,7 +16,7 @@ Update (25 Feb. 2016): An OpenCL version has been added.
 
 1. Set CUDA path in the Makefile,
 2. Run ``make``,
-3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here numbers `0' and `2' are device id and the number of right-hand sides, respectively. The `-forward' canbe replaced by `-backward' for solving upper triangular part of the input .mtx matrix.
+3. Run ``./sptrsv -d 0 -rhs 2 -forward -mtx example.mtx``. Here numbers `0` and `2` are device id and the number of right-hand sides, respectively. The `-forward` canbe replaced by `-backward` for solving upper triangular part of the input .mtx matrix.
 
 - Tested environments
 
