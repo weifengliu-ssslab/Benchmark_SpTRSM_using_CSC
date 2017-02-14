@@ -58,20 +58,20 @@ void sptrsv_syncfree_cuda_executor(const int* __restrict__        d_cscColPtr,
     if (threadIdx.x < WARP_PER_BLOCK) { s_graphInDegree[threadIdx.x] = 1; s_left_sum[threadIdx.x] = 0; }
     __syncthreads();
 
-    //clock_t start;
+    clock_t start;
     // Consumer
-    //do {
-    //    start = clock();
-    //}
-    //while (s_graphInDegree[local_warp_id] != d_graphInDegree[global_x_id]);
-  
-    // Consumer (fixed a problem that happens on Tesla P100)
-    int graphInDegree;
     do {
-        //bypass Tex cache and avoid other mem optimization by nvcc/ptxas
-        asm("ld.global.u32 %0, [%1];" : "=r"(graphInDegree),"=r"(d_graphInDegree[global_x_id]) :: "memory"); 
+        start = clock();
     }
-    while (s_graphInDegree[local_warp_id] != graphInDegree );
+    while (s_graphInDegree[local_warp_id] != d_graphInDegree[global_x_id]);
+  
+    //// Consumer (fixed a problem that happens on Tesla P100)
+    //int graphInDegree;
+    //do {
+    //    //bypass Tex cache and avoid other mem optimization by nvcc/ptxas
+    //    asm("ld.global.u32 %0, [%1];" : "=r"(graphInDegree),"=r"(d_graphInDegree[global_x_id]) :: "memory"); 
+    //}
+    //while (s_graphInDegree[local_warp_id] != graphInDegree );
 
     VALUE_TYPE xi = d_left_sum[global_x_id] + s_left_sum[local_warp_id];
     xi = (d_b[global_x_id] - xi) * coef;
@@ -138,20 +138,20 @@ void sptrsm_syncfree_cuda_executor(const int* __restrict__        d_cscColPtr,
     //asm("prefetch.global.L2 [%0];"::"d"(d_cscVal[d_cscColPtr[global_x_id] + 1 + lane_id]));
     //asm("prefetch.global.L2 [%0];"::"r"(d_cscRowIdx[d_cscColPtr[global_x_id] + 1 + lane_id]));
 
-    //clock_t start;
+    clock_t start;
     // Consumer
-    //do {
-    //    start = clock();
-    //}
-    //while (1 != d_graphInDegree[global_x_id]);
-  
-    // Consumer (fixed a problem that happens on Tesla P100)
-    int graphInDegree;
     do {
-        //bypass Tex cache and avoid other mem optimization by nvcc/ptxas
-        asm("ld.global.u32 %0, [%1];" : "=r"(graphInDegree),"=r"(d_graphInDegree[global_x_id]) :: "memory"); 
+        start = clock();
     }
-    while (1 != graphInDegree );
+    while (1 != d_graphInDegree[global_x_id]);
+  
+    //// Consumer (fixed a problem that happens on Tesla P100)
+    //int graphInDegree;
+    //do {
+    //    //bypass Tex cache and avoid other mem optimization by nvcc/ptxas
+    //    asm("ld.global.u32 %0, [%1];" : "=r"(graphInDegree),"=r"(d_graphInDegree[global_x_id]) :: "memory"); 
+    //}
+    //while (1 != graphInDegree );
 
     for (int k = lane_id; k < rhs; k += WARP_SIZE)
     {
