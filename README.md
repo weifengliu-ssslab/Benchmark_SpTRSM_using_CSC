@@ -9,6 +9,8 @@ The code supports both forward and backward substitution and multiple right-hand
 
 Please contact [Weifeng Liu](http://www.nbi.dk/~weifeng/) for reporting any issues in the code.
 
+Update (14 Feb. 2020, cuda): A problem about deadlock on CUDA 10 has been fixed.
+
 Update (13 Feb. 2017, cuda): A problem about caching has been fixed for Tesla P100. Thanks to Hartwig Anzt for identifying the probem and Ang Li for fixing it!
 
 <br><hr>
